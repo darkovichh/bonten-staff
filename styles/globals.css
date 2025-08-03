@@ -35,7 +35,7 @@ html, body {
   color: #fff;
   display: flex;
   flex-direction: column;
-  width: 35%;
+  width: 25%;
   height: 100vh;
   margin: 0 auto;
 }
@@ -139,19 +139,27 @@ p {
 
 /* Tablet görünümü (768px ve altı) */
 @media (max-width: 768px) {
+  html, body {
+    height: 110vh;
+  }
+
+  .main {
+    flex-direction: column;
+    height: 110vh;
+  }
+
   .column {
     width: 90%;
-    height: auto;
+    height: 110vh;
   }
 
   pre {
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
   }
 
   .profiles {
     flex-wrap: wrap;
     height: auto;
-    margin-top: 20px;
     justify-content: center;
   }
 
@@ -168,7 +176,7 @@ p {
   }
 
   .sub {
-    margin: 10px auto;
+    margin-top: 20px;
   }
 }
 
@@ -180,19 +188,18 @@ p {
   }
 
   pre {
-    margin: 0 auto 10px auto;
+    margin: 10px auto;
   }
 
   .profiles {
     flex-direction: column;
     align-items: center;
-    height: auto;
   }
 
   .pfp {
     width: 100%;
     max-width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .pfp-pic-1,
@@ -211,9 +218,5 @@ p {
 
   p {
     font-size: 12px;
-  }
-
-  .sub {
-    margin: 10px auto;
   }
 }
