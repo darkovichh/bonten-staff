@@ -128,7 +128,10 @@ p {
 }
 
 .sub p {
-  margin: auto;
+  margin: 10px auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 
