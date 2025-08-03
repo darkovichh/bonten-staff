@@ -125,6 +125,7 @@ p {
   flex-direction: column;
   width: 100%;
   height: 20px;
+  margin: 0 auto;
 }
 
 .sub p {
@@ -150,7 +151,7 @@ p {
   .profiles {
     flex-wrap: wrap;
     height: auto;
-    margin: auto;
+    margin: 0 auto;
     justify-content: center;
   }
 
@@ -164,6 +165,10 @@ p {
   .pfp-pic-2 {
     width: 120px;
     height: 120px;
+  }
+
+  .sub {
+    height: 50px;
   }
 }
 
@@ -206,5 +211,9 @@ p {
 
   p {
     font-size: 12px;
+  }
+
+  .sub {
+    height: 50px;
   }
 }
