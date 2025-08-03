@@ -28,6 +28,7 @@ export default function Main() {
               <a href="http://"><i class="fa-brands fa-discord"></i></a>
               <a href="http://"><i class="fa-brands fa-instagram"></i></a>
             </div>
+            
           </div>
           <div className="pfp">
             <div className="pfp-pic-2"></div>
