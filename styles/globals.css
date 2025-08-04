@@ -132,6 +132,21 @@ p {
 
 
 
+/* 1287px ve altı */
+@media (max-width: 1287px) {
+  .column {
+    flex: 1 1 45%; /* Orta ekranlarda iki sütun */
+  }
+}
+
+/* 768px ve altı */
+@media (max-width: 768px) {
+  .column {
+    flex: 1 1 100%; /* Mobilde tam genişlik */
+  }
+}
+
+
 /* Tablet görünümü (768px ve altı) */
 @media (max-width: 768px) {
   html, body {
