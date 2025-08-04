@@ -55,13 +55,12 @@ pre {
 
 .pfp {
   width: 35%;
-  height: 35vh;
   display: flex;
   flex-direction: column;
   margin: auto;
 }
 
-/* Profil fotoğrafları ortak özellikler */
+/* Profil fotoğrafları */
 .pfp-pic-1,
 .pfp-pic-2 {
   background-position: center;
@@ -69,8 +68,8 @@ pre {
   background-size: cover;
   background-clip: border-box;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  aspect-ratio: 1 / 1; /* Daima kare */
+  width: clamp(100px, 60%, 150px); /* Küçük ekranda küçülür, büyükte sabit kalır */
   margin: 15px auto;
 }
 
@@ -81,6 +80,7 @@ pre {
 .pfp-pic-2 {
   background-image: url("/images/pfp2.jpeg");
 }
+
 
 /* Yazılar */
 span {
@@ -139,13 +139,6 @@ p {
   }
 }
 
-/* 768px ve altı */
-@media (max-width: 768px) {
-  .column {
-    flex: 1 1 100%; /* Mobilde tam genişlik */
-  }
-}
-
 
 /* Tablet görünümü (768px ve altı) */
 @media (max-width: 768px) {
@@ -161,6 +154,7 @@ p {
   .column {
     width: 90%;
     height: 110vh;
+    flex: 1 1 100%; /* Mobilde tam genişlik */
   }
 
   pre {
@@ -175,14 +169,11 @@ p {
 
   .pfp {
     width: 45%;
-    height: auto;
-    margin-bottom: 20px;
   }
 
   .pfp-pic-1,
   .pfp-pic-2 {
-    width: 120px;
-    height: 120px;
+    width: clamp(80px, 50%, 120px);
   }
 
   .sub {
@@ -218,13 +209,11 @@ p {
   .pfp {
     width: 100%;
     max-width: 200px;
-    margin-bottom: 15px;
   }
 
   .pfp-pic-1,
   .pfp-pic-2 {
-    width: 100px;
-    height: 100px;
+    width: clamp(70px, 60%, 100px);
   }
 
   span {
