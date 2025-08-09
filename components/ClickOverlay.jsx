@@ -32,9 +32,10 @@ export default function ClickOverlay() {
         transition: "opacity 0.5s ease",
         textAlign: "center",
         padding: "0 10px", // Küçük ekranlarda taşma olmasın
+        fontWeight: "900",
       }}
     >
-      Click on Enter
+      Click to enter
     </div>
   );
 }
