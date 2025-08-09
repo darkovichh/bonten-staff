@@ -20,7 +20,7 @@ export default function ClickOverlay() {
       style={{
         position: "absolute",
         inset: 0,
-        background: "black",
+        background: "#0A0A0A",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
