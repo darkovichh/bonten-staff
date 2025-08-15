@@ -6,17 +6,17 @@ export default function AdminPanel() {
 
   useEffect(() => {
     fetch("/api/stats")
-      .then(res => res.json())
-      .then(data => setStats(data));
+      .then((res) => res.json())
+      .then((data) => setStats(data));
   }, []);
 
   return (
-    <div style={{ padding: "20px", background: "#111", color: "#fff", fontFamily: "sans-serif" }}>
+    <div style={{ padding: "20px", background: "#111", color: "#fff" }}>
       <h1>📊 Admin Panel</h1>
       <p>Toplam Ziyaretçi: {stats.total}</p>
 
       <h2>Ziyaretçi Listesi</h2>
-      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", background: "#222", color: "#fff" }}>
+      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse" }}>
         <thead>
           <tr>
             <th>IP Adresi</th>
