@@ -1,4 +1,3 @@
-// pages/admin/panel.js
 import { useEffect, useState } from "react";
 
 export default function AdminPanel() {
@@ -7,7 +6,11 @@ export default function AdminPanel() {
   useEffect(() => {
     fetch("/api/stats")
       .then((res) => res.json())
-      .then((data) => setStats(data));
+      .then((data) => {
+        console.log("Stats data:", data); // Debug
+        setStats(data);
+      })
+      .catch(err => console.error("Stats fetch hatası:", err));
   }, []);
 
   return (
