@@ -5,12 +5,9 @@ export default function AdminPanel() {
 
   useEffect(() => {
     fetch("/api/stats")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Stats data:", data); // Debug
-        setStats(data);
-      })
-      .catch(err => console.error("Stats fetch hatası:", err));
+      .then(res => res.json())
+      .then(data => setStats(data))
+      .catch(err => console.error(err));
   }, []);
 
   return (
@@ -19,17 +16,23 @@ export default function AdminPanel() {
       <p>Toplam Ziyaretçi: {stats.total}</p>
 
       <h2>Ziyaretçi Listesi</h2>
-      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse" }}>
+      <table
+        border="1"
+        cellPadding="8"
+        style={{ borderCollapse: "collapse", width: "100%" }}
+      >
         <thead>
           <tr>
             <th>IP Adresi</th>
-            <th>Tarih</th>
+            <th>Ülke & Şehir</th>
+            <th>Tarih & Saat</th>
           </tr>
         </thead>
         <tbody>
           {stats.visitors.map((v, i) => (
-            <tr key={i}>
+            <tr key={i} style={{ height: "40px" }}> {/* Satırlar arası boşluk */}
               <td>{v.ip}</td>
+              <td>{v.country}, {v.city}</td>
               <td>{new Date(v.date).toLocaleString()}</td>
             </tr>
           ))}
