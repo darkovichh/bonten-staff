@@ -5,12 +5,14 @@ export default async function handler(req, res) {
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_DB);
 
-    const ip =
+    let ip =
       req.headers["x-forwarded-for"]?.split(",")[0] ||
       req.socket.remoteAddress ||
       "Bilinmiyor";
 
-    // IP'den ülke ve şehir alma
+    // Localhost testi için dummy IP
+    if (ip === "::1" || ip === "127.0.0.1") ip = "8.8.8.8";
+
     let country = "Bilinmiyor";
     let city = "Bilinmiyor";
 
@@ -23,7 +25,7 @@ export default async function handler(req, res) {
       console.error("GeoIP hatası:", e);
     }
 
-    await db.collection("visitors").insertOne({
+    const result = await db.collection("visitors").insertOne({
       ip,
       country,
       city,

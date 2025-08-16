@@ -30,7 +30,7 @@ export default function AdminPanel() {
         </thead>
         <tbody>
           {stats.visitors.map((v, i) => (
-            <tr key={i} style={{ height: "40px" }}> {/* Satırlar arası boşluk */}
+            <tr key={i} style={{ height: "40px" }}>
               <td>{v.ip}</td>
               <td>{v.country}, {v.city}</td>
               <td>{new Date(v.date).toLocaleString()}</td>
