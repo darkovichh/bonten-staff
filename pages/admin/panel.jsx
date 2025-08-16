@@ -16,11 +16,7 @@ export default function AdminPanel() {
       <p>Toplam Ziyaretçi: {stats.total}</p>
 
       <h2>Ziyaretçi Listesi</h2>
-      <table
-        border="1"
-        cellPadding="8"
-        style={{ borderCollapse: "collapse", width: "100%" }}
-      >
+      <table border="1" cellPadding="8" style={{ borderCollapse: "collapse", width: "100%" }}>
         <thead>
           <tr>
             <th>IP Adresi</th>

@@ -5,13 +5,10 @@ export default async function handler(req, res) {
     const client = await clientPromise;
     const db = client.db(process.env.MONGODB_DB);
 
-    // Kullanıcının gerçek IP'si
-    let ip =
-      req.headers["x-forwarded-for"]?.split(",")[0] || 
-      req.socket.remoteAddress || 
-      "Bilinmiyor";
+    // Kullanıcının IP'si
+    let ip = req.headers["x-forwarded-for"]?.split(",")[0] || req.socket.remoteAddress || "Bilinmiyor";
 
-    // Localhost testi için dummy IP
+    // Localhost testinde dummy IP kullan
     if (ip === "::1" || ip === "127.0.0.1") ip = "8.8.8.8";
 
     let country = "Bilinmiyor";
