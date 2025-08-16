@@ -26,6 +26,7 @@ export default async function handler(req, res) {
       console.error("GeoIP hatası:", e);
     }
 
+    // Ziyaretçi kaydı
     await db.collection("visitors").insertOne({
       ip,
       country,
